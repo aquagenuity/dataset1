@@ -7,14 +7,20 @@
 
 <?php
 
-  $item = new Car();
-  $item->year = 2000;
-  $item->make = 'Honda';
-  $item->model = 'Accord';
-  $item->color = 'Silver';
-  $item->price = 23000;
-  $item->Save();
+    $html = null;
 
+    // $items = ToxinType::GetAll();
+    // foreach($items as $item){
+    //   $html .= sprintf("<div>%s</div>", $item->toxin_type_name);
+    // }
+
+    $item = ToxinType::GetByCd('01');
+    if($item){
+      $html .= sprintf("<div>%s</div>", $item->toxin_type_name);
+    }
+
+
+    print $html;
 ?>
 
   </div>

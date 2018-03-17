@@ -21,15 +21,14 @@ class ApiController extends BaseController
   api/car 		PUT			- update car found in PUT param
   api/car			DELETE 	-	delete car found in DELETE param
   */
-  public function car($id=null){
-    $value = $this->crud('Car',$id);
+  public function zip($id=null){
+    $root = new stdClass();
+    $root->status = 'success';
+    $items = Zip::GetAll();
+    foreach($items as $item) $item->extend();
+    $root->items = $items;
     header('Content-Type: application/json');
-    print json_encode($value);
-  }
-  public function club($id=null){
-    $value = $this->crud('Club',$id);
-    header('Content-Type: application/json');
-    print json_encode($value);
+    print json_encode($root);
   }
   public function test(){
     $value = new stdClass();

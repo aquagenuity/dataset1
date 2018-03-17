@@ -47,8 +47,8 @@
 
 	define('MYSQL_SERVER', '127.0.0.1');
 	define('MYSQL_DATABASE', 'aq');
-	define('MYSQL_USERNAME', 'username');
-	define('MYSQL_PASSWORD', 'password');
+  define('MYSQL_USERNAME', 'webuser');
+  define('MYSQL_PASSWORD', 'ouTYY5p0q06Ebk67fCQX');
 	define('MYSQL_DATETIME', 'Y-m-d H:i:s');
   define('MYSQL_FILTER', 'call sp_');
 	define('MYSQL_INT_UNSIGNED_MAX', 4294967295);
