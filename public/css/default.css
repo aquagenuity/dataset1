@@ -1,0 +1,59 @@
+*{position:relative; margin:0; padding:0;outline-width:0;}
+
+html{width:100%; height:100%;}
+body{overflow-x:hidden; overflow-y:scroll; font:normal 13px verdana,arial,sans-serif; width:100%; height:100%;}
+
+hr{border:1px solid #c0c0c0; border-width:1px 0 0 0;}
+
+img{border-width:0;}
+.center{text-align:center;}
+.logo{margin-top:10px;visibility:visible;display:block;}
+
+body.auth{}
+
+form{margin-bottom:10px;}
+form label{display:block; margin-top:4px;}
+form div.command{margin-top:10px; margin-bottom:10px;}
+form div.section{margin-bottom:20px;}
+form div.line{margin-bottom:7px; margin-top:4px;}
+input[type=checkbox]{top:2px; width:16px; height:16px;}
+
+.button{padding:2px 6px; border:1px solid #c0c0c0; background-color:#ddd;}
+.button{font-size:14px; padding:4px 8px; border-radius:0; -moz-border-radius:0; -webkit-border-radius:0; background-color:#ddd; border:1px solid #c0c0c0;}
+.button.big{font-size:16px; padding:6px 10px; border-radius:0; -moz-border-radius:0; -webkit-border-radius:0;}
+
+a{color:#0161ab;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+label.val-error{color:red; display:block; margin-bottom:4px;}
+
+.center{text-align:center;}
+.logo-title{text-transform:uppercase; color:#bbb; font-size:18px; margin-bottom:15px;}
+.logo-title .red{color:#99051f;}
+div.error{color:#ff0000;}
+div.status div.error{font-weight:bold;}
+
+script{display:none;}
+
+div.hdr{margin-bottom:10px; border:1px solid silver; border-width:0 0 1px 0; padding-bottom: 8px;}
+div.hdr a{display:inline-block;}
+
+div.nav{margin-bottom:10px;}
+div.nav ul{list-style:none; display:inline-block; margin:0; padding:0;}
+div.nav ul li{display:inline-block;}
+div.nav ul li a{display:inline-block; color:#fff; background-color:#c0c0c0; padding:0 30px 0 30px; font-size:16px; font-weight:bold; line-height:28px; text-decoration:none; margin-right:2px;}
+div.nav ul li a.selected{background-image:url(/img/navigation-selected.png); background-position:0 0; background-repeat:repeat-x;}
+div.nav ul li a:hover{}
+div.nav ul li a.home{}
+
+h1{font-size:18px; color:#616161; margin-top:0; margin-bottom:12px;}
+h2{font-size:15px; color:#616161; margin-top:0; margin-bottom:6px;}
+h3{font-size:12px; color:#616161; margin-top:0; margin-bottom:4px;}
+
+.grid-50 div{background-color:silver; line-height:40px; text-align:center;}
+.grid-25 div{background-color:#dddeee; line-height:40px; text-align:center;}
+.grid-33 div{background-color:#272727; line-height:40px; text-align:center; color:#ddd;}
+
+
+.loader{display:none;}

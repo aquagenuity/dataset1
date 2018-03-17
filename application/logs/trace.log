@@ -1,0 +1,80 @@
+00.035448 -------------------- /admin/gen 
+00.129743 call sp_role_get_by_user('user@qeala.com') 
+00.000161 -------------------- / 
+00.018242 call sp_user_get_by_id('4d61e46e-bd87-11e1-a2da-0303030a26a1') 
+00.034452 call sp_role_get_by_user('user@qeala.com') 
+00.038249 call sp_role_get_by_user('user@qeala.com') 
+00.000103 -------------------- /test 
+00.008705 call sp_user_get_by_id('4d61e46e-bd87-11e1-a2da-0303030a26a1') 
+00.010411 call sp_role_get_by_user('user@qeala.com') 
+00.011967 call sp_role_get_by_user('user@qeala.com') 
+00.030857 call sp_club_ins('Passions', '101 Peachtree St', 'Atlanta', null, 20) 
+00.000110 -------------------- /api/club 
+00.016637 call sp_club_get 
+00.000152 -------------------- / 
+00.001013 call sp_user_get_by_id('4d61e46e-bd87-11e1-a2da-0303030a26a1') 
+00.002154 call sp_role_get_by_user('user@qeala.com') 
+00.003025 call sp_role_get_by_user('user@qeala.com') 
+00.000103 -------------------- /test 
+00.002327 call sp_user_get_by_id('4d61e46e-bd87-11e1-a2da-0303030a26a1') 
+00.003440 call sp_role_get_by_user('user@qeala.com') 
+00.004284 call sp_role_get_by_user('user@qeala.com') 
+00.009337 call sp_club_ins('Dreams', '102 Peachtree St', 'Atlanta', null, 30) 
+00.000105 -------------------- /api/club 
+00.000868 call sp_club_get 
+00.000127 -------------------- /api/club/2 
+00.006037 call sp_club_get_by_id(2) 
+00.002653 -------------------- / 
+00.000063 -------------------- /user/signin 
+00.000083 -------------------- /user/signin 
+00.009373 call sp_user_get_by_email('user@qeala.com') 
+00.015675 call sp_user_validate('user@qeala.com', '0rIQrpWRJMM=') 
+00.016476 call sp_user_get_by_username('user@qeala.com') 
+00.017313 call sp_user_get_by_id('4d61e46e-bd87-11e1-a2da-0303030a26a1') 
+00.020983 call sp_role_get_by_user('user@qeala.com') 
+00.023688 call sp_role_get_by_user('user@qeala.com') 
+00.000065 -------------------- / 
+00.000621 call sp_user_get_by_id('4d61e46e-bd87-11e1-a2da-0303030a26a1') 
+00.001363 call sp_role_get_by_user('user@qeala.com') 
+00.002127 call sp_role_get_by_user('user@qeala.com') 
+00.000073 -------------------- /admin 
+00.002357 call sp_role_get_by_user('user@qeala.com') 
+00.000078 -------------------- /admin/user 
+00.000742 call sp_role_get_by_user('user@qeala.com') 
+00.007483 call sp_user_get 
+00.022583 -------------------- / 
+00.023807 -------------------- /en/ 
+00.034139 -------------------- / 
+00.000053 -------------------- /user/signin 
+00.000064 -------------------- / 
+00.000053 -------------------- / 
+00.000071 -------------------- /user/signin 
+00.000057 -------------------- / 
+00.000066 -------------------- / 
+00.003042 -------------------- / 
+00.000070 -------------------- /content/test 
+00.012277 call sp_club_ins('Dreams', '102 Peachtree St', 'Atlanta', null, 30) 
+00.000076 -------------------- /api/club 
+00.002470 call sp_club_get 
+00.000074 -------------------- /content/test 
+00.000760 call sp_club_ins('Dreams', '102 Peachtree St', 'Atlanta', null, 30) 
+00.028377 -------------------- /content/test 
+00.151509 call sp_club_ins('Dreams', '102 Peachtree St', 'Atlanta', null, 30) 
+00.000054 -------------------- /content/test 
+00.000689 call sp_club_ins('Dreams', '102 Peachtree St', 'Atlanta', null, 30) 
+00.000058 -------------------- /content/test 
+00.000778 call sp_club_ins('Dreams', '102 Peachtree St', 'Atlanta', null, 30) 
+00.000054 -------------------- /content/test 
+00.000818 call sp_club_ins('Dreams', '102 Peachtree St', 'Atlanta', null, 30) 
+00.000063 -------------------- /content/test 
+00.000628 call sp_club_ins('Dreams', '102 Peachtree St', 'Atlanta', null, 30) 
+00.000063 -------------------- /api/club 
+00.026765 call sp_club_get 
+00.000072 -------------------- /content/test 
+00.013648 call sp_car_ins(2000, 'Honda', 'Accord', 'Silver', 23000) 
+00.000058 -------------------- /content/test 
+00.000616 call sp_car_ins(2000, 'Honda', 'Accord', 'Silver', 23000) 
+00.000052 -------------------- /content/test 
+00.000717 call sp_car_ins(2000, 'Honda', 'Accord', 'Silver', 23000) 
+00.000059 -------------------- /api/car 
+00.012573 call sp_car_get 
