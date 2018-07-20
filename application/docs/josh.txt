@@ -1,0 +1,15 @@
+host:195.201.108.16
+username:josh
+password:zYJdHSdV6vNX6BdM
+
+access server via ssh. example:
+ssh josh@195.201.108.16
+
+!IMPORTANT
+you have root access. be careful with files.
+
+website home directory:
+/var/www/aq.qea.la
+
+use rsync to upload files to the site:
+

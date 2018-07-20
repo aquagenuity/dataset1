@@ -8,13 +8,17 @@
 <meta charset="UTF-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+
 <!--[if (gt IE 8) | (IEMobile)]><!-->
   <link rel="stylesheet" href="/css/unsemantic-grid-responsive.css" />
 <!--<![endif]-->
 <!--[if (lt IE 9) & (!IEMobile)]>
   <link rel="stylesheet" href="/css/ie.css" />
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="/css/default.css?v=1.0" />
+<link rel="stylesheet" type="text/css" href="/css/default.css?v=<?php echo CSS_VERSION; ?>" />
 <?php
 
   $user_id = $_SESSION['user_id'];
@@ -33,7 +37,7 @@
 <div class="loader"><div class="green"></div><div class="red"></div><div class="blue"></div><div class="yellow"></div></div>
 <div class="grid-container">
 <div class="fb-root"></div>
-<div class="grid-100 hdr"><a href="/"><img class="logo" src="/img/qeala.png" width="225" /></a></div>
+<div class="grid-100 hdr"><a href="/"><img class="logo" src="/img/aquagenuity-logo.png" width="225" /></a></div>
 <?php
   $user_id = $_SESSION['user_id'];
   $html = null;
@@ -42,7 +46,7 @@
   $html .= sprintf("<li><a href=\"/\"%s>Home</a></li>", ($routeinfo->action == "index")?" class=\"home selected\"":" class=\"home\"");
   if($user_id){
     $html .= sprintf("<li><a href=\"%s/user/profile\"%s>Profile</a></li>", $secure_url, ($routeinfo->action == "profile")?" class=\"selected\"":"");
-    if(is_admin()) $html .= sprintf("<li><a href=\"%s/test\"%s>Test</a></li>", $secure_url, ($routeinfo->action == "test")?" class=\"selected\"":"");
+    //if(is_admin()) $html .= sprintf("<li><a href=\"%s/test\"%s>Test</a></li>", $secure_url, ($routeinfo->action == "test")?" class=\"selected\"":"");
     if(is_admin()) $html .= sprintf("<li><a href=\"%s/admin\"%s>Admin</a></li>", $secure_url, ($routeinfo->action == "admin")?" class=\"selected\"":"");
     $html .= sprintf("<li><a href=\"%s/user/signout\"%s>Sign Out</a></li>", $site_url, ($routeinfo->action == "signout")?" class=\"selected\"":"");
   }else{

@@ -21,18 +21,125 @@ class ApiController extends BaseController
   api/car 		PUT			- update car found in PUT param
   api/car			DELETE 	-	delete car found in DELETE param
   */
+  public function apc_clear_cache(){
+    $root = new stdClass();
+    $root->status = 'success';
+    apc_clear_cache();
+    header('Content-Type: application/json');
+    print json_encode($root);
+  }
+
+  public function results(){
+    $root = new stdClass();
+    $root->status = 'success';
+    $json = request('json');
+
+    $items = json_decode($json);
+    $json = json_encode($items, JSON_PRETTY_PRINT);
+    trace($json);
+
+    $count = count($items);
+    trace("count:$count");
+
+    for($i=0;$i<count($items);$i++){
+      trace("item:$i");
+      $item = $items[$i];
+      $titem = new Tap($item);
+      $titem->Save();
+    }
+
+
+    header('Content-Type: application/json');
+    print json_encode($root);
+  }
+
+  public function utility($id=null){
+    $root = new stdClass();
+    $root->status = 'success';
+
+    $items = array();
+
+    $name = request('name');
+    if($name){
+      $items = Utility::GetByName($name);
+    }else if($id){
+      $item = Utility::GetById($id);
+      if($item) $items[] = $item;
+    }else{
+      $items = Utility::GetAll();
+    }
+
+    $root->items = $items;
+
+    header('Content-Type: application/json');
+    print json_encode($root);
+  }
+
   public function zip($id=null){
     $root = new stdClass();
     $root->status = 'success';
-    $items = Zip::GetAll();
-    foreach($items as $item) $item->extend();
+
+    $zip_cd = request('zip_cd');
+    $utility_id = request('utility_id');
+
+    $items = array();
+
+    if($zip_cd){
+      if($utility_id){
+        $items = Zip::GetByCdUtility($zip_cd, $utility_id);
+      }else{
+        $items = Zip::GetByCd($zip_cd);
+      }
+    }else if($utility_id){
+      $items = Zip::GetByUtility($utility_id);
+    }else if($id){
+      $item = Zip::GetById($id);
+      if($item) $items[] = $item;
+    }else{
+      $items = Zip::GetAll();
+    }
+
+    $toxin_rating = 0;
+
+    $titems = ToxinType::GetAll();
+    $toxin_total = count($titems);
+
+    $toxin_type_cds = array();
+    foreach($items as $item){
+      $toxin_type_cd = $item->toxin_type_cd;
+      if(!in_array($toxin_type_cd, $toxin_type_cds)){
+        $toxin_type_cds[] = $toxin_type_cd;
+      }
+    }
+    $toxin_count = count($toxin_type_cds);
+
+    $toxin_rating = ceil((floatval($toxin_total - $toxin_count)/floatval($toxin_total)) * 10);
+
+    if($toxin_rating < 1) $toxin_rating = 1;
+
+    foreach($items as $item) {
+      $item->extend();
+      $item->toxin_total = $toxin_total;
+      $item->toxin_count = $toxin_count;
+      $item->toxin_rating = $toxin_rating;
+    }
+
     $root->items = $items;
+
     header('Content-Type: application/json');
     print json_encode($root);
   }
   public function test(){
     $value = new stdClass();
     $value->status = 'success';
+
+    trace('test.begin');
+    $json = json_encode($_REQUEST, JSON_PRETTY_PRINT);
+    trace($json);
+    $json = json_encode($_SERVER, JSON_PRETTY_PRINT);
+    trace($json);
+    trace('test.end');
+
     header('Content-Type: application/json');
     print json_encode($value);
   }

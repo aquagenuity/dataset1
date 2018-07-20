@@ -30,18 +30,27 @@ class StateType{
 
   static function GetAll(){
     $values = array();
-    $sql = "call sp_state_type_get";
-    $results = MySQL::Execute($sql);
-    if($results) foreach($results as $result) $values[] = new StateType($result);
+    $key = "StateType:GetAll";
+    $apc_enabled = ini_get('apc.enabled');
+    if(!$apc_enabled || !apc_exists($key)){
+      $sql = "call sp_state_type_get";
+      $results = MySQL::Execute($sql);
+      if($results) foreach($results as $result) $values[] = new StateType($result);
+      if($apc_enabled && !empty($values)) apc_store($key, $values, 0);
+    }
+    if($apc_enabled) $values = apc_fetch($key);
     return $values;
   }
 
   static function GetByCd($state_type_cd){
     $value = null;
-    $sql = "call sp_state_type_get_by_cd(?)";
-    $params = array('s', $state_type_cd);
-    $results = MySQL::Execute($sql, $params);
-    if($results) $value = new StateType($results[0]);
+    $items = StateType::GetAll();
+    foreach($items as $item){
+      if($item->state_type_cd == $state_type_cd){
+        $value = $item;
+        break;
+      }
+    }
     return $value;
   }
 

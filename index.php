@@ -426,9 +426,9 @@
   }
 
 
-  //trace(sprintf("apc_exists:%s", function_exists('apc_exists')));
-  //trace(sprintf("apc_fetch:%s", function_exists('apc_fetch')));
-  //trace(sprintf("apc_store:%s", function_exists('apc_store')));
+  trace(sprintf("apc_exists:%s", function_exists('apc_exists')));
+  trace(sprintf("apc_fetch:%s", function_exists('apc_fetch')));
+  trace(sprintf("apc_store:%s", function_exists('apc_store')));
 
   $g_user = null;
   $g_authenticated = false;

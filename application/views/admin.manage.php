@@ -376,6 +376,8 @@
               if(ends_with($key, '_cd') || ends_with($key, '_id')) $key_type = "select";
               if($key == 'photo') $key_type = 'file';
 
+              if(($class_name == 'Zip' || $class_name == 'ZipToxinSource') && $key == 'zip_cd') $key_type = 'text';
+
               $class = ($n%2 == 0)? "item":"alt-item";
               $html .= sprintf("<tr class=\"%s\">", $class);
               $value = $item->$key;

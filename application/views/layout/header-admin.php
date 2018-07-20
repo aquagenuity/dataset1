@@ -5,6 +5,8 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="Cache-Control" content="no-cache"/>
 <meta http-equiv="X-UA-Compatible" content="IE=IE8" />
+<link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/css/default-admin.css?v=1.0" />
 </head>
 <body>
@@ -16,10 +18,14 @@ $username = $_SESSION['username'];
 $is_ben = $username == 'ben@qeala.com';
 if($user_id){
 	$html = "<div class=\"header\">";
+  $html .= "<a class=\"logo\" href=\"/admin\"><img src=\"/img/aquagenuity-logo.png\" /></a>";
 	$html .= "<ul>";
 	$html .= "<li><a href=\"/user/signout\">Logout</a></li>";
 	$html .= "<li><a href=\"/\" target=\"_blank\">Site</a></li>";
-  $html .= "<li><a href=\"/admin/gen\">Gen</a></li>";
+  $html .= "<li><a href=\"/admin/toxin-limit\">ToxinLimit</a></li>";
+  $html .= "<li><a href=\"/admin/toxin-average\">ToxinAverage</a></li>";
+  $html .= "<li><a href=\"/admin/zip-toxin-source\">ZipToxinSource</a></li>";
+  $html .= "<li><a href=\"/admin/zip\">Zip</a></li>";
 	$html .= "<li><a href=\"/admin/user\">User</a></li>";
 	$html .= "</ul>";
 	$html .= "</div>";

@@ -11,7 +11,9 @@
 <input type="text" id="email" name="email" tabindex="1" maxlength="100" />
 <label>Password</label>
 <input type="password" id="password" name="password" tabindex="2" maxlength="10" />
+<!--
 <div><a href="/user/password">Forgot Password</a></div>
+//-->
 <div class="command"><input type="submit" id="cmd" name="cmd" value="<?php echo CMD_LOGIN ?>" class="button submit" /></div>
 </form>
 

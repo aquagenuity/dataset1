@@ -41,7 +41,13 @@ class Zip{
     if($item) $this->filter_type_name = $item->filter_type_name;
 
     $item = Utility::GetById($this->utility_id);
-    if($item) $this->utility_name = $item->name;
+    if($item) {
+      $this->utility_name = $item->name;
+      $this->state_type_cd = $item->state_type_cd;
+
+      $sitem = StateType::GetByCd($item->state_type_cd);
+      if($sitem) $this->state_type_name = $sitem->state_type_name;
+    }
 
     $count = 0;
     $sitems = ToxinLimit::GetAll();
@@ -89,6 +95,7 @@ class Zip{
     $this->above_state_average = $this->state_average? ($this->amount > $this->state_average) : null;
     $this->above_national_average = $this->national_average? ($this->amount > $this->national_average) : null;
 
+
   }
 
   static function GetAll(){
@@ -106,6 +113,33 @@ class Zip{
     $results = MySQL::Execute($sql, $params);
     if($results) $value = new Zip($results[0]);
     return $value;
+  }
+
+  static function GetByCd($zip_cd){
+    $values = array();
+    $sql = "call sp_zip_get_by_cd(?)";
+    $params = array('s', $zip_cd);
+    $results = MySQL::Execute($sql, $params);
+    if($results) foreach($results as $result) $values[] = new Zip($result);
+    return $values;
+  }
+
+  static function GetByCdUtility($zip_cd, $utility_id){
+    $values = array();
+    $sql = "call sp_zip_get_by_cd_utility(?, ?)";
+    $params = array('si', $zip_cd, $utility_id);
+    $results = MySQL::Execute($sql, $params);
+    if($results) foreach($results as $result) $values[] = new Zip($result);
+    return $values;
+  }
+
+  static function GetByUtility($utility_id){
+    $values = array();
+    $sql = "call sp_zip_get_by_utility(?)";
+    $params = array('i', $utility_id);
+    $results = MySQL::Execute($sql, $params);
+    if($results) foreach($results as $result) $values[] = new Zip($result);
+    return $values;
   }
 
   function Create(){

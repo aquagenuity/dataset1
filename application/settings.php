@@ -1,5 +1,7 @@
 <?php
 
+  ini_set('apc.enabled', 1);
+
 	define('SESSION_NAME', 'aq-php-mvc');
 	define('SITE_OFFLINE', false);
 	define('SITE_OFFLINE_IP', '127.0.0.1');
@@ -9,7 +11,7 @@
 
 	define('APP_NAME', 'aq');
 	define('APP_PATH', $p);
-	define('APP_ID', 'd771134f-bd86-11e1-a2da-0303030a26a1');
+	define('APP_ID', '2fb39867-39dd-11e8-ad23-801934a0ac26');
 
 	define('TRACE_ENABLED', true);
 	define('SINGLE_LINE_OUTPUT', false);
@@ -21,6 +23,11 @@
   if( (strrpos($s, '/') !== (strlen($s)-strlen('/'))) ){
     $s = sprintf("%s/", $s);
   }
+
+  define('CSS_VERSION', '20171049');
+  define('JS_VERSION', CSS_VERSION);
+
+  define('SITE_URL', 'https://app.aquagenuity.com');
 
 	define('TRACE_FILE_UNC', $s.'application/logs/trace.log');
 

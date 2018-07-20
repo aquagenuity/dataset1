@@ -1,0 +1,6 @@
+casperjs /var/www/aq.qea.la/application/service/tap.js --zip=30002 --verbose=false
+casperjs /var/www/aq.qea.la/application/service/tap.js --zip=30004 --verbose=false
+casperjs /var/www/aq.qea.la/application/service/tap.js --zip=30005 --verbose=false
+casperjs /var/www/aq.qea.la/application/service/tap.js --zip=30008 --verbose=false
+casperjs /var/www/aq.qea.la/application/service/tap.js --zip=30009 --verbose=false
+casperjs /var/www/aq.qea.la/application/service/tap.js --zip=30011 --verbose=false

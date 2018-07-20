@@ -19,18 +19,19 @@ img{border-width:0;}
 .login .input{width:200px;}
 .login .title{border:1px solid #aaa;padding:5px;margin-top:15px;margin-bottom:10px;text-align:center;}
 .command{padding-top:10px;}
-.header{position:absolute;top:10px;left:50%;width:990px;height:40px;margin-left:-495px;border-width:1px;border-style:solid;}
+.header{position:absolute;top:10px;left:50%;width:990px;height:80px;margin-left:-495px;border-width:1px;border-style:solid;}
 .header ul{margin:0;padding:0;}
 .header ul li{margin:5px 5px;padding:0;list-style-type: none;float:right;}
-.header ul li a{text-decoration: none;}
+.header ul li a{text-decoration: none; line-height: 70px;}
 .header ul li a:hover{text-decoration: underline;}
-.header .logo{width:40px; float:left;}
+.header a.logo{position: absolute; top:0; left:0; }
+.header a.logo img{width:255px; height:auto;}
 
-.content{position:absolute;top:60px;left:50%;width:990px;margin-left:-495px;border-width:0;border-style:solid;padding-bottom:60px;}
+.content{position:absolute;top:100px;left:50%;width:990px;margin-left:-495px;border-width:0;border-style:solid;padding-bottom:60px;}
 
 /* color info */
 .login .title{color:#999;}
-a{color:#b1131b; text-decoration: none;}
+a{color:#0000ff; text-decoration: none;}
 a:hover{text-decoration: underline;}
 a.sort-link{color:#fff; text-decoration: none;}
 img.sort-arrow{float:left; margin-top:-5px;}

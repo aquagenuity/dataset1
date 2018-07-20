@@ -9,16 +9,7 @@
 
     $html = null;
 
-    // $items = ToxinType::GetAll();
-    // foreach($items as $item){
-    //   $html .= sprintf("<div>%s</div>", $item->toxin_type_name);
-    // }
-
-    $item = ToxinType::GetByCd('01');
-    if($item){
-      $html .= sprintf("<div>%s</div>", $item->toxin_type_name);
-    }
-
+    trace($_REQUEST);
 
     print $html;
 ?>

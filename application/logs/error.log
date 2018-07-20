@@ -1,0 +1,1 @@
+2018/07/08 21:22:43 [error] 4927#4927: *208 open() "/var/www/aq.qea.la/public/img/qeala-web-design-logo.png" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /img/qeala-web-design-logo.png HTTP/1.1", host: "lcl.qea.la:8109", referrer: "https://lcl.qea.la:8109/admin/signin"
